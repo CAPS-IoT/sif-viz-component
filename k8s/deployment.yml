@@ -13,10 +13,10 @@ spec:
         app: viz-backend
     spec:
       imagePullSecrets:
-        - name: caps-registry-secret-namespaced
+        - name: <secret>
       containers:
         - name: viz-backend
-          image: registry.caps.in.tum.de/viz-component:latest
+          image: <image-name>:<tag>
           imagePullPolicy: "Always"
           ports:
             - containerPort: 9000

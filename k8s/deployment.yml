@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: viz-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: viz-backend
+  template:
+    metadata:
+      labels:
+        app: viz-backend
+    spec:
+      imagePullSecrets:
+        - name: caps-registry-secret-namespaced
+      containers:
+        - name: viz-backend
+          image: registry.caps.in.tum.de/viz-component:latest
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 9000
+          envFrom:
+            - configMapRef:
+                name: viz-backend-configmap

@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: viz-backend
+  name: <component-name>
 spec:
   type: NodePort
   ports:
-    - name: viz-backend
+    - name: <component-name>
       port: 9000
       targetPort: 9000
       nodePort: 9000
       protocol: TCP
   selector:
-    app: viz-backend
+    app: <component-name>

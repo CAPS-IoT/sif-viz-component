@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: viz-backend
+  name: <component-name>
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: viz-backend
+      app: <component-name>
   template:
     metadata:
       labels:
-        app: viz-backend
+        app: <component-name>
     spec:
       imagePullSecrets:
         - name: <secret>
       containers:
-        - name: viz-backend
+        - name: <component-name>
           image: <image-name>:<tag>
           imagePullPolicy: "Always"
           ports:
             - containerPort: 9000
           envFrom:
             - configMapRef:
-                name: viz-backend-configmap
+                name: <component-name>-configmap

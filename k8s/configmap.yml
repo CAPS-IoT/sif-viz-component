@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: viz-backend-configmap
+  name: <component-name>-configmap
   labels:
-    app: viz-backend
+    app: <component-name>
 data:
   INFLUXDB_HOST: http://influx.iot.svc.cluster.local:8086
   INFLUXDB_USER: admin

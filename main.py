@@ -16,7 +16,7 @@ from models import ToDo, Information, DeleteBody
 TODO_BUCKET = "todo_record"
 INFO_BUCKET = "info_record"
 
-INFLUX_ORG = "wise2024"
+INFLUX_ORG = "wise2025"
 INFLUX_TOKEN = os.environ.get(
     "INFLUXDB_HOST", None)
 INFLUX_USER = os.environ.get("INFLUXDB_USER", None)
